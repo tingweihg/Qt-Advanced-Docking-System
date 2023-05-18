@@ -1,25 +1,26 @@
+INCLUDEPATH += $${PWD}/src
 
 CONFIG(debug, debug|release){
     win32-g++ {
     	versionAtLeast(QT_VERSION, 5.15.0) {
-    		LIBS += -lqtadvanceddocking
+                LIBS += -L$${PWD}/build/lib -lqtadvanceddocking
     	}
     	else {
-    		LIBS += -lqtadvanceddockingd
+                LIBS += -L$${PWD}/build/lib -lqtadvanceddockingd
     	}
     }
     else:msvc {
-        LIBS += -lqtadvanceddockingd
+        LIBS += -L$${PWD}/build/lib -lqtadvanceddockingd
     }
     else:mac {
-        LIBS += -lqtadvanceddocking_debug
+        LIBS += -L$${PWD}/build/lib -lqtadvanceddocking_debug
     }
     else {
-        LIBS += -lqtadvanceddocking
+        LIBS += -L$${PWD}/build/lib -lqtadvanceddocking
     }
 }
 else{
-    LIBS += -lqtadvanceddocking
+    LIBS += -L$${PWD}/build/lib -lqtadvanceddocking
 }
 
 

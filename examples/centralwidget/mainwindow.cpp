@@ -74,7 +74,7 @@ CMainWindow::CMainWindow(QWidget *parent)
     CDockWidget* PropertiesDockWidget = new CDockWidget("Properties");
     PropertiesDockWidget->setWidget(propertiesTable);
     PropertiesDockWidget->setMinimumSizeHintMode(CDockWidget::MinimumSizeHintFromDockWidget);
-    PropertiesDockWidget->resize(250, 150);
+    PropertiesDockWidget->resize(25, 150);
     PropertiesDockWidget->setMinimumSize(200,150);
     DockManager->addDockWidget(DockWidgetArea::RightDockWidgetArea, PropertiesDockWidget, CentralDockArea);
     ui->menuView->addAction(PropertiesDockWidget->toggleViewAction());
